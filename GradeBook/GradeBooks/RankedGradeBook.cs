@@ -13,8 +13,7 @@ namespace GradeBook.GradeBooks
 
         public override char GetLetterGrade(double averageGrade)
         {
-            if (Students.Count < 5)                
-                throw new InvalidOperationException("Ranked-grading requires a minimum of 5 students to work");
+          
 
             if (averageGrade <= 0.20)
                 return 'A';
@@ -24,6 +23,8 @@ namespace GradeBook.GradeBooks
                 return 'C';
             if (averageGrade > 0.60 && averageGrade <= 0.80)
                 return 'D';
+            if (Students.Count < 5)
+                throw new InvalidOperationException("Ranked-grading requires a minimum of 5 students to work");
             else
                 return 'F';
             
