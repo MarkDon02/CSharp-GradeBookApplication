@@ -18,11 +18,11 @@ namespace GradeBook.GradeBooks
 
             if (averageGrade < 0.20)
                 return base.GetLetterGrade('A');
-            else if (averageGrade >= 0.20 && averageGrade <= 0.40)
+            else if (averageGrade > 0.20 && averageGrade <= 0.40)
                 return base.GetLetterGrade('B');
-            else if (averageGrade >= 0.40 && averageGrade <= 0.60)
+            else if (averageGrade > 0.40 && averageGrade <= 0.60)
                 return base.GetLetterGrade('C');
-            else if (averageGrade >= 0.60 && averageGrade <= 0.80)
+            else if (averageGrade > 0.60 && averageGrade <= 0.80)
                 return base.GetLetterGrade('D');
             {
                 return base.GetLetterGrade('F');
