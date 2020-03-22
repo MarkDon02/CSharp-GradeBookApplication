@@ -16,17 +16,20 @@ namespace GradeBook.GradeBooks
             if (Students.Count < 5)
                 throw new InvalidOperationException("Ranked-grading requires a minimum of 5 students to work");
 
-            if (averageGrade < 0.20)
-                return base.GetLetterGrade('A');
-            else if (averageGrade > 0.20 && averageGrade <= 0.40)
-                return base.GetLetterGrade('B');
-            else if (averageGrade > 0.40 && averageGrade <= 0.60)
-                return base.GetLetterGrade('C');
-            else if (averageGrade > 0.60 && averageGrade <= 0.80)
-                return base.GetLetterGrade('D');
+            else
             {
-                return base.GetLetterGrade('F');
+                if (averageGrade < 0.20)
+                    return base.GetLetterGrade('A');
+                else if (averageGrade > 0.20 && averageGrade < 0.40)
+                    return base.GetLetterGrade('B');
+                else if (averageGrade >= 0.40 && averageGrade < 0.60)
+                    return base.GetLetterGrade('C');
+                else if (averageGrade >= 0.60 && averageGrade < 0.80)
+                    return base.GetLetterGrade('D');
+                else
+                    return base.GetLetterGrade('F');
             }
+            
             
         }
     }
