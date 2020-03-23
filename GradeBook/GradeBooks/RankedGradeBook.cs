@@ -17,7 +17,7 @@ namespace GradeBook.GradeBooks
 
             if (totalStudents < 5)
                 throw new InvalidOperationException("Ranked-grading requires a minimum of 5 students to work");
-            if (totalStudents == 5)
+            if (totalStudents >= 5)
             {
                 if (averageGrade <= 0.20)
                     return base.GetLetterGrade('A');
