@@ -15,7 +15,7 @@ namespace GradeBook.GradeBooks
         {
             var totalStudents = Students.Count * 0.20;
 
-            if (totalStudents < 5)
+            if (Students.Count < 5)
                 throw new InvalidOperationException("Ranked-grading requires a minimum of 5 students to work");
             if (totalStudents >= 5)
             {
