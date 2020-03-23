@@ -15,8 +15,6 @@ namespace GradeBook.GradeBooks
         {
             var x = Students.Count * 0.20;
 
-            if (x < 5)
-                throw new InvalidOperationException("Ranked-grading requires a minimum of 5 students");
 
             if (x >= 5 && averageGrade <= 0.20)
                 return base.GetLetterGrade('A');
@@ -26,6 +24,8 @@ namespace GradeBook.GradeBooks
                 return base.GetLetterGrade('C');
             else if (x >= 5 && averageGrade >= 0.60 && averageGrade <= 0.80)
                 return base.GetLetterGrade('D');
+            else if (x < 5)
+                throw new InvalidOperationException("Ranked-grading requires a minimum of 5 students");
             else
                 return base.GetLetterGrade('F');
 
