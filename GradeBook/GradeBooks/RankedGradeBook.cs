@@ -13,26 +13,22 @@ namespace GradeBook.GradeBooks
 
         public override char GetLetterGrade(double averageGrade)
         {
-            var totalStudents = Students.Count * 0.20;
+            var x = Students.Count * 0.20;
 
-            if (Students.Count < 5)
-                throw new InvalidOperationException("Ranked-grading requires a minimum of 5 students to work");
-            foreach (var total in Students)
-            {
-                if (averageGrade <= 0.20)
-                    return base.GetLetterGrade('A');
-                else if (averageGrade > 0.20 && averageGrade <= 0.40)
-                    return base.GetLetterGrade('B');
-                else if (averageGrade > 0.40 && averageGrade <= 0.60)
-                    return base.GetLetterGrade('C');
-                else if (averageGrade > 0.60 && averageGrade <= 0.80)
-                    return base.GetLetterGrade('D');
+            if (x < 5)
+                throw new InvalidOperationException("Ranked-grading requires a minimum of 5 students");
 
-            }
-                
-           
-          
-               return base.GetLetterGrade('F');
+            if (x >= 5 && averageGrade <= 0.20)
+                return base.GetLetterGrade('A');
+            else if (x >= 5 && averageGrade >= 0.20 && averageGrade <= 0.40)
+                return base.GetLetterGrade('B');
+            else if (x >= 5 && averageGrade >= 0.40 && averageGrade <= 0.60)
+                return base.GetLetterGrade('C');
+            else if (x >= 5 && averageGrade >= 0.60 && averageGrade <= 0.80)
+                return base.GetLetterGrade('D');
+            else
+                return base.GetLetterGrade('F');
+
         }
     }
 }
